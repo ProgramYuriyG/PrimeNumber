@@ -1,6 +1,63 @@
 // 2-22-18
 
+import java.util.*;
+public class PrimeNumberImproved{
+//Main Method
+public static void main(String[]args){
+Scanner input = new Scanner(System.in);
 
+//asks the user to input an interger
+System.out.println("Enter an interger: ");
+int number = input.nextInt();
+
+//checks if initial input is less than 1 and if not then loops and lets user enter in a correct interger
+while(number<=1){
+System.out.print("\nPlease enter an interger greater than 1: ");
+number = input.nextInt();
+}
+
+//adds a line after the input
+System.out.println();
+
+//defines the number used to check for primes and the number of primes
+int prime = 0;
+int numberOfPrimes = 0;
+
+//loop for decreasing the numbers until you get to 1
+for(int x = number;x>1;x--){
+//resets the prime number for each new number
+prime = 0;
+
+   //loop for checking each specific number
+   for(int j=2;j<10;j++){
+   
+         //for when the number is equal to j, so for all numbers below 10
+         if(x==j){
+         prime++;
+         }
+         
+      //if the number/j has a remainder then add a prime counter
+      if(x%j != 0){
+      prime++;
+      }
+      
+      //if the prime counter is equal to 8 then output the number and reset the counter, while increasing the number of primes counter
+      if(prime == 8){
+      System.out.println(x);
+      prime=0;
+      numberOfPrimes++;
+      break;
+      }
+   }
+}
+
+//Outputs the number of prime numbers found in the number
+System.out.print("\nThe number of prime numbers in "+number+" is "+numberOfPrimes+".");
+
+
+
+
+}}
 
 
 
